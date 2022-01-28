@@ -1,0 +1,23 @@
+
+    [
+        {
+            "id": 1,
+            "email": "email1@nelisoftwares.com",
+            "password": "123456"
+        },
+        {
+            "id": 2,
+            "email": "email2@nelisoftwares.com",
+            "password": "654321"
+        },
+        {
+            "id": 3,
+            "email": "email4@nelisoftwares.com",
+            "password": "135246"
+        },
+        {
+            "id": 4,
+            "email": "email5@nelisoftwares.com",
+            "password": "246135"
+        }
+    ]
