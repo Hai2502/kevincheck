@@ -5,6 +5,7 @@ import AuthState from "../../../context/authContext/AuthState";
 
 const AyncStorage = {};
 jest.mock("@react-native-async-storage/async-storage", () => AyncStorage);
+jest.mock("react-native/Libraries/Animated/NativeAnimatedHelper");
 
 describe("homeScreen", () => {
   beforeEach(() => {

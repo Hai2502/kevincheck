@@ -42,12 +42,6 @@ const AuthState = (props: {
     console.log(
       "============================= SIGNOUT ========================="
     );
-    console.log(
-      "============================= SIGNOUT ========================="
-    );
-    console.log(
-      "============================= SIGNOUT ========================="
-    );
 
     // mock object support : AsyncStorage - where address
     // mock method: removeItem - what apartment

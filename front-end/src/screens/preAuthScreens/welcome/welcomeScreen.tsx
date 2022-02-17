@@ -12,7 +12,6 @@ const Pages = {
 const WelcomeScreen = () => {
   const navigation = useNavigation();
   const onPress = () => {
-    // TODO
     navigation.navigate({
       key: Pages.Login,
       name: "Login" as never,

@@ -1,12 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import AuthContext from "../../../context/authContext/AuthContext";
-import {
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
+import { View, Text, Image, TouchableOpacity, TextInput } from "react-native";
 import Accounts from "../../../models/auth/data.json";
 import logo from "../../../assets/logo.jpg";
 import { find } from "lodash-es";
@@ -15,7 +9,7 @@ import { styles } from "./login.style";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [isAbleToLoin, setIsAbleToLogin] = useState<boolean>(false);
+  // const [isAbleToLoin, setIsAbleToLogin] = useState<boolean>(false);
 
   const { onAuthentication } = useContext(AuthContext);
 
@@ -40,10 +34,6 @@ const Login = () => {
   const onPaswordChange = (value: any) => {
     setPassword(value);
   };
-
-  useEffect(() => {
-    setIsAbleToLogin(Boolean(email && password));
-  }, [email, password]);
 
   return (
     <View style={styles.container}>
@@ -79,7 +69,7 @@ const Login = () => {
         <TouchableOpacity
           style={[
             styles.buttonLogin,
-            isAbleToLoin
+            Boolean(email && password)
               ? styles.buttonLoginEnable
               : styles.buttonLoginDisabled,
           ]}
