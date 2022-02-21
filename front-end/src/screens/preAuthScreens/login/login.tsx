@@ -9,7 +9,6 @@ import { styles } from "./login.style";
 const Login = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  // const [isAbleToLoin, setIsAbleToLogin] = useState<boolean>(false);
 
   const { onAuthentication } = useContext(AuthContext);
 

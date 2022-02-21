@@ -39,7 +39,7 @@ const UpdateTodo = () => {
     setInput(value);
   };
 
-  const updateT = () => {
+  const onUpdateTodo = () => {
     updateTodo({
       variables: {
         updateTodoId: idToUpdate,
@@ -59,7 +59,7 @@ const UpdateTodo = () => {
         onChangeText={onInputChange}
         style={styles.inputTodo}
       />
-      <Button title="Update todo" onPress={updateT} />
+      <Button title="Update todo" onPress={onUpdateTodo} />
     </View>
   );
 };

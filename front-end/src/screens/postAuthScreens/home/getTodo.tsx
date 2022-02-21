@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { styles } from "./homeScreen.style";
 import { useQuery, gql } from "@apollo/client";
-import { View, Text, Button } from "react-native";
+import { View, Text } from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 const GET_TODOS = gql`
@@ -25,7 +25,7 @@ const GetTodo = () => {
   if (loading) return <Text>Loading...</Text>;
   if (error) return <Text>Error loading todos </Text>;
 
-  const onPress = (key: any) => {
+  const onCheck = (key: any) => {
     const allIds: any[] | (() => any[]) = [];
     let id = key;
     if (ids.includes(id)) {
@@ -73,7 +73,7 @@ const GetTodo = () => {
               unfillColor="#FFFFFF"
               iconStyle={{ borderColor: "blue" }}
               textStyle={{ fontFamily: "JosefinSans-Regular" }}
-              onPress={(checked: boolean) => onPress(todo.id)}
+              onPress={() => onCheck(todo.id)}
             />
           </View>
         )

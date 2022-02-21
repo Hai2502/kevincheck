@@ -30,7 +30,7 @@ const AddTodo = () => {
       },
     ],
   });
-  const add = () => {
+  const onAddTodo = () => {
     addTodo({
       variables: {
         description: input,
@@ -55,7 +55,7 @@ const AddTodo = () => {
         onChangeText={onInputChange}
         style={styles.inputTodo}
       />
-      <Button title="add todo" onPress={add} />
+      <Button title="add todo" onPress={onAddTodo} />
     </View>
   );
 };

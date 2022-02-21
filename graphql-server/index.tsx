@@ -23,6 +23,12 @@ const typeDefs = gql`
 
 const resolvers = {
   Query: {
+     /**
+     * This is the function to get all todo from database
+     * @param 
+     * @returns
+     * @throws
+     */
     todos: async () => {
       const db = await getDB();
       return new Promise((resolve, reject) => {
@@ -40,12 +46,12 @@ const resolvers = {
   Mutation: {
     /**
      * This is the function to create todo in database
-     * @param {string} parent - This is the aprent wejqwhewqe
-     * @param args
+     * @param parent 
+     * @param args - these are the arguments for the mutation 
      * @param context
      * @param info
      * @returns
-     * @throws {Error} this is qweqwe
+     * @throws
      */
     addTodo: async (parent, args, context, info) => {
       const db = await getDB();
@@ -62,7 +68,15 @@ const resolvers = {
         );
       });
     },
-
+     /**
+     * This is the function to update todo in database
+     * @param parent 
+     * @param args - these are the arguments for the mutation 
+     * @param context
+     * @param info
+     * @returns
+     * @throws
+     */
     updateTodo: async (parent, args, context, info) => {
       const db = await getDB();
       return new Promise((resolve, reject) => {
@@ -79,38 +93,16 @@ const resolvers = {
       });
     },
 
-    finishTodo: async (parent, args, context, info) => {
-      const db = await getDB();
-      return new Promise((resolve, reject) => {
-        db.query(
-          `UPDATE todo SET isFinished = true WHERE id = "${args.id}";`,
-          (err, finishTodo) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(finishTodo);
-            }
-          }
-        );
-      });
-    },
 
-    deleteTodo: async (parent, args, context, info) => {
-      const db = await getDB();
-      return new Promise((resolve, reject) => {
-        db.query(
-          `DELETE FROM todo WHERE id = "${args.id}";`,
-          (err, deleteTodo) => {
-            if (err) {
-              reject(err);
-            } else {
-              resolve(deleteTodo);
-            }
-          }
-        );
-      });
-    },
-
+     /**
+     * This is the function to delete selected todos in database
+     * @param parent 
+     * @param args - these are the arguments for the mutation 
+     * @param context
+     * @param info
+     * @returns
+     * @throws
+     */
     deleteTodos: async (parent, args, context, info) => {
       const db = await getDB();
       console.log(args.ids);

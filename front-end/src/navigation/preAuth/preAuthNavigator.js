@@ -1,7 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { WelcomeScreen } from "../../screens/preAuthScreens";
-import { Login } from "../../screens/preAuthScreens";
+import { WelcomeScreen } from "../../screens/preAuthScreens/index";
+import { Login } from "../../screens/preAuthScreens/index";
 
 const PreAuthNavigator = () => {
   const { Navigator, Screen } = createStackNavigator();

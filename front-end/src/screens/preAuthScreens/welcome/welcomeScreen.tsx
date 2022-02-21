@@ -11,7 +11,7 @@ const Pages = {
 
 const WelcomeScreen = () => {
   const navigation = useNavigation();
-  const onPress = () => {
+  const goToLogin = () => {
     navigation.navigate({
       key: Pages.Login,
       name: "Login" as never,
@@ -33,7 +33,7 @@ const WelcomeScreen = () => {
         <TouchableOpacity
           testID="moveToLogin"
           style={styles.buttonLogin}
-          onPress={onPress}
+          onPress={goToLogin}
         >
           <Image
             source={gg}

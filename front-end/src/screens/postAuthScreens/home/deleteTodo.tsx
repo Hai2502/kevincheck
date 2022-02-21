@@ -33,7 +33,7 @@ const DeleteTodo = () => {
   if (loading) return "Deleting...";
   if (error) return `Deleting error! ${error.message}`;
 
-  const deleteT = () => {
+  const onDeleteTodo = () => {
     deleteTodo({
       variables: {
         ids: ids,
@@ -45,7 +45,7 @@ const DeleteTodo = () => {
     <TouchableOpacity
       testID="btn-signout"
       style={styles.Button1}
-      onPress={deleteT}
+      onPress={onDeleteTodo}
     >
       <Text style={{ color: "#fff" }}>Delete</Text>
     </TouchableOpacity>
